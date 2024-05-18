@@ -9,8 +9,30 @@ module.exports = (sequelize, DataTypes) => {
   }
   Favourite.init(
     {
-      heroId: DataTypes.INTEGER,
-      userId: DataTypes.INTEGER,
+      heroId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+          notNull: {
+            msg: "Hero Id cant be empty",
+          },
+          notEmpty: {
+            msg: "Hero Id cant be empty",
+          },
+        },
+      },
+      userId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+          notNull: {
+            msg: "User Id cant be empty",
+          },
+          notEmpty: {
+            msg: "User Id cant be empty",
+          },
+        },
+      },
       role: DataTypes.STRING,
       power: DataTypes.INTEGER,
     },
