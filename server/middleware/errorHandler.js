@@ -20,6 +20,11 @@ function errorHandler(error, req, res, next) {
       message = "Unauthenticated";
       break;
 
+    case "HeroNotHere":
+      status = 404;
+      message = "Hero not found";
+      break;
+
     case "UserNotFound":
       status = 400;
       message = "Invalid input Email/Password";
