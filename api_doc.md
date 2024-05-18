@@ -134,6 +134,10 @@ Response (401 - Unauthorized)
 }
 ```
 
+
+#DONE LOGIN & REGISTER DONE
+
+
 ## 3. GET /heroes
 
 Fetch all heroes from database

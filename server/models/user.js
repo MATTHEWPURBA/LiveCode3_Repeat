@@ -7,7 +7,6 @@ module.exports = (sequelize, DataTypes) => {
       User.belongsToMany(models.Hero, {
         through: models.Favourite,
         foreignKey: "userId",
-        otherKey: "heroId",
       });
     }
   }
