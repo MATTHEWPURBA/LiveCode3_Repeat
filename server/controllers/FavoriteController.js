@@ -27,6 +27,22 @@ class FavouriteController {
       next(error);
     }
   }
+
+  static async getAllFav(req, res, next) {
+    try {
+      const dataCuisine = await Favourite.findAll({
+        include: [
+          {
+            model: Hero,
+            attributes: ["id", "name", "type", "imageUrl"],
+          },
+        ],
+      });
+      res.json(dataCuisine);
+    } catch (error) {
+      next(error);
+    }
+  }
 }
 
 module.exports = FavouriteController;

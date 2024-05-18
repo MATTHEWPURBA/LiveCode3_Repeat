@@ -6,6 +6,7 @@ const FavouriteController = require("../../controllers/FavoriteController");
 const router = express.Router();
 
 router.use(authentication);
+router.get("/", FavouriteController.getAllFav);
 router.post("/:heroId", FavouriteController.postFavourite);
 
 module.exports = router;

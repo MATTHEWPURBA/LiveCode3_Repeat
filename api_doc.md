@@ -255,6 +255,12 @@ Response (200 - OK)
 ]
 ```
 
+
+
+#DONE Get All, Post Fav
+
+
+
 ## 6. PUT /favourites/:id
 
 - Update favourite hero
