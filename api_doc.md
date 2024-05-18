@@ -32,9 +32,7 @@
 
 Perhatikan relasi antara `User`, `Favourite`, dan `Hero` gunakan definisi relasi yang sesuai pada sequelize relation [doc]
 
-
 (https://sequelize.org/master/manual/advanced-many-to-many.html).
-
 
 ## Endpoints
 

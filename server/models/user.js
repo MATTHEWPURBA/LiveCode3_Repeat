@@ -47,6 +47,11 @@ module.exports = (sequelize, DataTypes) => {
             args: true,
             msg: "Password is required",
           },
+          min(value) {
+            if (value < 5) {
+              throw new Error("minimum character for Password is 5 char");
+            }
+          },
         },
       },
     },
