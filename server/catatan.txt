@@ -98,8 +98,13 @@ IncubatorId: {
 
 npx sequelize seed:create --name "seedIncubator"
 
+
+
 npx sequelize seed:create --name "seedUser"
-npx sequelize seed:create --name "seedCategory"
+npx sequelize seed:create --name "seedHero"
+
+
+
 npx sequelize seed:create --name "seedCuisine"
 
 
