@@ -7,7 +7,7 @@ const HeroController = require("../controllers/HeroController");
 
 router.get("/", HeroController.homePage);
 router.use("/users", userRoute);
-router.use("/hero", heroRoute);
+router.use("/heroes", heroRoute);
 router.use("/favourites",favoRoute)
 
 

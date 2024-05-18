@@ -3,7 +3,7 @@ const { Hero } = require("../models");
 class HeroController {
   static async homePage(req, res, next) {
     try {
-      res.json("Hello World");
+      res.status(200).json({ message: "Hello World" });
     } catch (error) {
       next(error);
     }
@@ -11,7 +11,7 @@ class HeroController {
   static async getAllHeroes(req, res, next) {
     try {
       const dataCuisine = await Hero.findAll();
-      res.json(dataCuisine);
+      res.status(200).json(dataCuisine);
     } catch (error) {
       next(error);
     }

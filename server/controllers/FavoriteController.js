@@ -30,7 +30,15 @@ class FavouriteController {
 
   static async getAllFav(req, res, next) {
     try {
+      /** userId ini untuk seleksi favourite user yang sedang log in */
+      const userId = req.user.id;
+      /** userId ini untuk seleksi favourite user yang sedang log in */
       const dataFavourite = await Favourite.findAll({
+        /** nah seleksi nya disini nih untuk biar yang ditammpilin tuh favourite nya punya user yang log in aja */
+        where: {
+          userId: userId,
+        },
+        /** nah seleksi nya disini nih untuk biar yang ditammpilin tuh favourite nya punya user yang log in aja */
         include: [
           {
             model: Hero,
