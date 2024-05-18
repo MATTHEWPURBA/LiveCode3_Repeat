@@ -30,7 +30,7 @@ class FavouriteController {
 
   static async getAllFav(req, res, next) {
     try {
-      const dataCuisine = await Favourite.findAll({
+      const dataFavourite = await Favourite.findAll({
         include: [
           {
             model: Hero,
@@ -38,7 +38,32 @@ class FavouriteController {
           },
         ],
       });
-      res.json(dataCuisine);
+      res.json(dataFavourite);
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  static async updateHeroFavourite(req, res, next) {
+    try {
+      const dataFavouritebyId = await Favourite.findByPk(req.params.id);
+      //ini bikin params.id karena dibuat /:id disebelah favourites
+      console.log(req.params, "ini req params");
+      if (!dataFavouritebyId) {
+        throw {
+          name: "HeroNotHere",
+        };
+      }
+
+      let { role, power } = req.body;
+
+      await dataFavouritebyId.update({ role, power });
+
+      await dataFavouritebyId.reload();
+
+      res.status(200).json({
+        message: "Hero has been updated",
+      });
     } catch (error) {
       next(error);
     }

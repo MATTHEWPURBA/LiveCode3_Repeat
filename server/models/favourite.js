@@ -57,8 +57,14 @@ module.exports = (sequelize, DataTypes) => {
           },
         },
       },
-      role: DataTypes.STRING,
-      power: DataTypes.INTEGER,
+      role: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      power: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
     },
     {
       sequelize,

@@ -20,9 +20,19 @@ function errorHandler(error, req, res, next) {
       message = "Unauthenticated";
       break;
 
+    case "CuisineNotFound":
+      status = 404;
+      message = "Cuisine Not Found";
+      break;
+
     case "HeroNotHere":
       status = 404;
       message = "Hero not found";
+      break;
+
+    case "ForbiddenAuth":
+      status = 403;
+      message = "You are not authorized";
       break;
 
     case "UserNotFound":
