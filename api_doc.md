@@ -256,7 +256,6 @@ Response (200 - OK)
 ```
 
 
-
 #DONE Get All, Post Fav
 
 
@@ -300,6 +299,7 @@ Response (200 - OK)
 }
 ```
 
+
 Response (404 - Not Found)
 
 ```json
@@ -307,6 +307,7 @@ Response (404 - Not Found)
   "message": "Hero not found"
 }
 ```
+
 
 ## Global Error
 
