@@ -4,6 +4,7 @@ import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 import MainLayout from "./components/MainLayout";
 import Homepage from "./pages/Homepage";
+import Favourite from "./pages/Favourites";
 
 const router = createBrowserRouter([
   {
@@ -12,12 +13,20 @@ const router = createBrowserRouter([
       if (!localStorage.token) {
         return redirect("/login");
       }
-      return null
+      return null;
     },
     children: [
       {
         path: "/",
-        element: <Homepage />,
+        element: <Homepage position = "homepage" />,
+        // buat props untuk lofic reusable cards,
+        // jadi nanti cards yang disini menampilkan add to fav
+      },
+      {
+        path: "/favourites",
+        element: <Favourite position = "favourite" />,
+          // buat props untuk lofic reusable cards,
+        // jadi nanti cards yang disini menampilkan edit favourite
       },
     ],
   },

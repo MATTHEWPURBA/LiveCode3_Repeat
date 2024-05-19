@@ -3,7 +3,9 @@ import { useNavigate, useParams } from "react-router-dom";
 import Cards from "../components/Cards";
 import { localRequest } from "../../utils/axios";
 
-export default function Homepage() {
+export default function Homepage(position) {
+  /** ini dibuat position untuk menerima props dari app jsx */
+
   const [dataHeroes, setDataHeroes] = useState([]);
   const fetchData = async () => {
     try {
@@ -47,6 +49,11 @@ export default function Homepage() {
     }
   };
 
+
+
+
+
+
   return (
     <>
       {/* hero */}
@@ -64,7 +71,7 @@ export default function Homepage() {
         <div className="container mx-auto">
           <div className="grid grid-cols-12 gap-4 py-6 mx-6">
             {dataHeroes.map((dataHeroes) => {
-              return <Cards postData={postData} dataHeroes={dataHeroes} key={dataHeroes.id} />;
+              return <Cards postData={postData} dataHeroes={dataHeroes} key={dataHeroes.id} button={position} />;
             })}
           </div>
         </div>
