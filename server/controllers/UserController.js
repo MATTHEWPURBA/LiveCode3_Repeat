@@ -3,9 +3,7 @@ const { createWebToken } = require("../helpers/jwt");
 const { User } = require("../models/");
 
 class UserController {
-
   static async registerUser(req, res, next) {
-
     try {
       const userInput = await User.create(req.body);
       res.status(201).json({
@@ -15,7 +13,6 @@ class UserController {
     } catch (error) {
       next(error);
     }
-
   }
   static async loginUser(req, res, next) {
     try {
